@@ -1,0 +1,31 @@
+{
+  "name": "college-management-system",
+  "version": "1.0.0",
+  "description": "Enterprise Multi-Tenant College Management System (MERN Stack)",
+  "private": true,
+  "scripts": {
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:all": "npm install && npm run install:server && npm run install:client",
+    "seed:admin": "cd server && node scripts/initAdmin.js",
+    "seed:demo": "cd server && node scripts/seedDemo.js",
+    "setup": "npm run seed:admin",
+    "server": "cd server && node server.js",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,cyan\" \"npm run server\" \"npm run client\"",
+    "test": "cd server && npm test",
+    "build": "cd client && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "mern",
+    "multi-tenant",
+    "college-management-system",
+    "education-saas"
+  ],
+  "author": "Apex Education Systems",
+  "license": "ISC"
+}
+
